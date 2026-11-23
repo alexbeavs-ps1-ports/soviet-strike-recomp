@@ -1,0 +1,59 @@
+# Autofilled by tools/new_project_layout/probe_disc.py from your legal dump.
+# Review before shipping. Runtime quirks / overlay seeds still need hand work.
+
+[game]
+name = "Soviet Strike"
+id = "SLUS-00061"
+players = 1
+exe = "disc/SLUS_000.61"
+disc = "disc/Soviet Strike (USA) (Rev 1).cue"
+discs = ["disc/Soviet Strike (USA) (Rev 1).cue"]
+disc_serials = ["SLUS-00061"]
+load_address = "0x80010000"
+entry_pc = "0x8005B62C"
+text_size = "0x0006E800"
+stack_base = "0x801FFFF0"
+
+# Digests are for data Track 01 (first BINARY FILE / TRACK 01).
+[prepare_disc]
+out_dir = "disc"
+bin_name = "Soviet Strike (USA) (Rev 1) (Track 1).bin"
+cue_name = "Soviet Strike (USA) (Rev 1).cue"
+boot_exe = "SLUS_000.61"
+known_sizes = [622847232]
+known_md5 = [
+  "21547641df0bdf27dcab20773b471f92",
+]
+known_sha1 = [
+  "d0717a6c7982918c93c30877ac61762a9f7c65de",
+]
+known_crc32 = [
+  "24aa590a",
+]
+
+[recompiler]
+bios_config = "psxrecomp/bios/SCPH1001.toml"
+seeds = "seeds/ghidra_funcs.txt"
+out_dir = "generated"
+strict = true
+
+[runtime]
+openbios = false
+bios_hle = false
+window_title = "Soviet Strike Recompiled"
+memcard_dir = "saves"
+overlay_cache = true
+
+[video]
+renderer = "opengl"
+aspect_ratio = "4:3"
+
+[controller]
+default_mode = "digital"
+
+# Online mount gate: digests + track count + optional TOC fingerprint
+# (see docs/NETPLAY.md).
+[netplay]
+require_cue = true
+required_tracks = 2
+required_disc_fp = "52f43a343871924b96701d19f8855e403347496efacbe9b70013cfa9bf47b9b7"

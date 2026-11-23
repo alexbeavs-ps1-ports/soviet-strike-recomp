@@ -1,0 +1,98 @@
+{
+  "format_version": 1,
+  "id": "soviet-strike-psx",
+  "name": "Soviet Strike",
+  "kind": "recomp",
+  "platform": "psx",
+  "source_repo": "soviet-strike-recomp",
+  "rom_identity": {
+    "crc32": [
+      "24aa590a"
+    ],
+    "md5": [
+      "21547641df0bdf27dcab20773b471f92"
+    ],
+    "sha1": [
+      "d0717a6c7982918c93c30877ac61762a9f7c65de"
+    ],
+    "disc_serials": [
+      "SLUS-00061"
+    ],
+    "sizes": [
+      622847232
+    ],
+    "filenames": [
+      "Soviet Strike (USA) (Rev 1).cue",
+      "Soviet Strike (USA) (Rev 1) (Track 1).bin"
+    ],
+    "track_counts": [
+      2
+    ],
+    "disc_fps": [
+      "52f43a343871924b96701d19f8855e403347496efacbe9b70013cfa9bf47b9b7"
+    ],
+    "require_cue": true
+  },
+  "rom_extensions": [
+    ".cue",
+    ".bin",
+    ".chd"
+  ],
+  "bios_identity": {
+    "required": true,
+    "name": "SCPH1001.BIN",
+    "profile": "SCPH1001",
+    "crc32": [
+      "37157331"
+    ],
+    "md5": [
+      "924e392ed05558ffdb115408c263dccf"
+    ],
+    "sha1": [
+      "10155d8d6e6e832d6ea66db9bc098321fb5e8ebf"
+    ],
+    "sha256": [
+      "71af94d1e47a68c11e8fdb9f8368040601514a42a5a399cda48c7d3bff1e99d3"
+    ],
+    "sizes": [
+      524288
+    ],
+    "filenames": [
+      "SCPH1001.BIN"
+    ]
+  },
+  "release": {
+    "github": "alexbeavs-ps1-ports/soviet-strike-recomp",
+    "allow_prerelease": false,
+    "asset_glob": {
+      "windows-x64": "soviet-strike-*-windows-x64.zip",
+      "linux-x64": "soviet-strike-*-linux-x64.zip",
+      "macos-arm64": "soviet-strike-*-macos-arm64.zip",
+      "macos-x64": "soviet-strike-*-macos-x64.zip"
+    }
+  },
+  "launch": {
+    "windows": "soviet_strike.exe",
+    "linux": "soviet_strike",
+    "macos": "soviet_strike"
+  },
+  "build": {
+    "source": {
+      "github": "alexbeavs-ps1-ports/soviet-strike-recomp",
+      "ref": ""
+    },
+    "toolchain": {
+      "id": "cmake-clang-v1",
+      "min_version": "1.0.14"
+    },
+    "generate": {
+      "engine": "psxrecomp",
+      "config": "game.toml"
+    },
+    "cmake": {
+      "build_dir": "build",
+      "target": "psx-runtime",
+      "config": "Release"
+    }
+  }
+}

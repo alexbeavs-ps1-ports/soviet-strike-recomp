@@ -1,0 +1,13 @@
+{
+  "$schema": "https://recomp.fyi/schema/v1.json",
+  "game": "Soviet Strike",
+  "system": "PS1",
+  "type": "recomp",
+  "toolchain": "psxrecomp",
+  "status": "exploring",
+  "project": "soviet-strike-recomp",
+  "original": {
+    "region": "USA",
+    "serial": "SLUS-00061"
+  }
+}
